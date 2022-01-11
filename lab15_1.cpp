@@ -3,17 +3,35 @@ using namespace std;
 
 template <typename T>
 void insertionSort(T d[],int N){
-
+	int y = 0;
+	int A = 1;
+	T x;
+	for(int i = 0; i < N; i++)
+	{
+		for(int j = 0; j < i+1; j++)
+		{
+			if(d[i] > d[j])
+			{
+				x = d[j];
+				d[j]=d[i];
+				d[i] = x;
+				y++;
+				
+				
+			}
+		}
+		
+		
+		cout << "Pass "<<A<<":";
+		A++;
+		for(int k =0; k < N; k++)
+				{
+					cout << d[k]<<" ";
+					
+				}
+		cout << "\n";
+		
+	}
 }
 
-int main(){
-	int a[10] = {12,25,30,44,2,0,4,7,55,25};
-	cout << "Input Array:";
-	for(int i = 0; i < 10; i++) cout << a[i] << " ";
-	cout << "\n\n";
-	
-	insertionSort(a,10);
-	
-	cout << "\nSorted Array:";
-	for(int i = 0; i < 10; i++) cout << a[i] << " ";	
-}
+
